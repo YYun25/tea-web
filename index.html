@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>山嵐茶舍｜台灣精品茶品牌</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Noto Serif TC", "Microsoft JhengHei", serif;
+      background: #faf7ff;
+      color: #332f3f;
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e3d8ef;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: #5d3f86;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 14px;
+      color: #6d6478;
+    }
+
+    .nav-links a:hover {
+      color: #8e6bbf;
+    }
+
+    .hero {
+      min-height: 92vh;
+      background:
+        linear-gradient(rgba(56, 42, 82, 0.52), rgba(56, 42, 82, 0.46)),
+        url("images/背景.png") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      color: #fff;
+    }
+
+    .hero-content {
+      max-width: 760px;
+      padding: 60px 0;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.38);
+      background: rgba(255,255,255,0.12);
+      color: #f5efff;
+      font-size: 14px;
+    }
+
+    .hero h1 {
+      font-size: 58px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #f2eaff;
+      margin-bottom: 30px;
+      max-width: 650px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 26px;
+      border-radius: 999px;
+      font-size: 15px;
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #8e6bbf;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #7454a3;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.4);
+      color: #fff;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.16);
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 38px;
+      color: #5d3f86;
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 46px;
+       color: #6d6478;
+      font-size: 16px;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .two-column img {
+      height: 460px;
+      object-fit: cover;
+      border-radius: 24px;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.08);
+    }
+
+    .text-block h3 {
+      font-size: 30px;
+      color: #5d3f86;
+      margin-bottom: 18px;
+    }
+
+    .text-block p {
+      margin-bottom: 16px;
+      color: #6d6478;
+    }
+
+    .soft-bg {
+      background: #f0e8fb;
+    }
+
+    .brand-values {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .value-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px 24px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    }
+
+    .value-card h4 {
+      font-size: 22px;
+      color: #5d3f86;
+      margin-bottom: 10px;
+    }
+
+    .value-card p {
+      font-size: 15px;
+      color: #6d6478;
+    }
+
+    .slider-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .slider-header-left h2 {
+      font-size: 34px;
+      color: #5d3f86;
+      margin-bottom: 8px;
+    }
+
+    .slider-header-left p {
+      color: #6d6478;
+      font-size: 15px;
+    }
+
+    .slider-buttons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .slider-btn {
+      width: 52px;
+      height: 52px;
+      border: none;
+      border-radius: 50%;
+      background: #8e6bbf;
+      color: white;
+      font-size: 22px;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .slider-btn:hover {
+      background: #7454a3;
+    }
+
+    .product-slider {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 10px;
+      scrollbar-width: none;
+    }
+
+    .product-slider::-webkit-scrollbar {
+      display: none;
+    }
+
+    .product-card {
+      min-width: 320px;
+      max-width: 320px;
+      background: #fff;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+      flex: 0 0 auto;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .product-card img {
+       width: 100%;
+       height: 340px;
+       object-fit: cover;
+       object-position: center center;
+       padding: 0;
+       background: none;
+    }
+
+    .product-info {
+      padding: 24px;
+    }
+
+    .product-info h3 {
+      font-size: 24px;
+      color: #5d3f86;
+      margin-bottom: 8px;
+    }
+
+    .product-meta {
+      font-size: 13px;
+      color: #8a7d96;
+      margin-bottom: 12px;
+    }
+
+    .product-info p {
+      font-size: 14px;
+      color: #6d6478;
+      margin-bottom: 14px;
+      min-height: 140px;
+    }
+
+    .price {
+      display: inline-block;
+      font-size: 20px;
+      color: #c9a86a;
+      font-weight: bold;
+      margin-bottom: 14px;
+    }
+
+    .location-box {
+      max-width: 920px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 24px;
+      padding: 40px 34px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+    }
+
+    .location-box p {
+      color: #6d6478;
+      margin-bottom: 14px;
+    }
+
+    .contact {
+      background: #5d3f86;
+      color: #fff;
+    }
+
+    .contact .section-title,
+    .contact .section-subtitle {
+      color: #fff;
+    }
+
+    .contact-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-wrap p {
+      color: #f1eaff;
+      margin-bottom: 22px;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      color: #eadfff;
+      font-size: 15px;
+      margin-top: 16px;
+    }
+
+    footer {
+      background: #2d2340;
+      color: #e5dcf3;
+      text-align: center;
+      padding: 24px 0;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1100px) {
+      .two-column,
+      .brand-values {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .two-column,
+      .brand-values {
+        grid-template-columns: 1fr;
+      }
+
+      .two-column img {
+        height: 320px;
+      }
+
+      .slider-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .product-card {
+        min-width: 260px;
+        max-width: 260px;
+      }
+
+      .product-info p {
+        min-height: 180px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        min-height: 75vh;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .section-title,
+      .slider-header-left h2 {
+        font-size: 28px;
+      }
+
+      .product-card {
+        min-width: 220px;
+        max-width: 220px;
+      }
+
+      .product-card img {
+        height: 180px;
+      }
+
+      .product-info p {
+        min-height: 220px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container navbar">
+      <div class="logo">山嵐茶舍</div>
+      <nav class="nav-links">
+        <a href="#about">品牌介紹</a>
+        <a href="#philosophy">創業理念</a>
+        <a href="#founder">創業故事</a>
+        <a href="#products">茶品系列</a>
+        <a href="#values">品牌精神</a>
+        <a href="#location">品牌據點</a>
+        <a href="#contact">聯絡我們</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-tag">Taiwan Premium Tea Brand</span>
+        <h1>把山霧、日光與土地的溫度，收藏進每一杯茶裡</h1>
+        <p>
+          山嵐茶舍專注於台灣精品茶葉的選製與呈現，從高山烏龍、東方美人到特色紅茶，
+          我們希望把茶不只是作為商品，而是作為一種生活的節奏、一種品味的延伸，
+          讓更多人重新感受到台灣茶文化細緻而耐人尋味的魅力。
+        </p>
+        <div class="hero-buttons">
+          <a href="#products" class="btn btn-primary">瀏覽茶品</a>
+          <a href="#contact" class="btn btn-secondary">品牌合作</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">關於山嵐茶舍</h2>
+      <p class="section-subtitle">
+        我們相信，一杯好茶不只是飲品，而是一段與土地、時間與人之間重新連結的過程。
+      </p>
+
+      <div class="two-column">
+        <img src="images/1.png" alt="茶具與茶葉">
+        <div class="text-block">
+          <h3>用現代美學，重新詮釋台灣茶的價值</h3>
+          <p>
+            山嵐茶舍成立於台灣，長期與阿里山、梨山、杉林溪、日月潭等茶區合作，
+            精選具有代表性的原葉茶品，透過穩定的品質控管與細膩的品牌設計，
+            希望讓台灣茶不只停留在傳統印象中，而能以更優雅、簡約且貼近現代生活的方式被看見。
+          </p>
+          <p>
+            我們重視茶葉本身的風味，也重視消費者拿到商品時的整體感受。
+            從包裝質感、商品敘事、沖泡建議到送禮情境，山嵐茶舍希望讓每一份茶，
+            都能在日常生活中成為一種溫柔而有質感的存在。
+          </p>
+          <p>
+            不論是自己慢慢品飲，或是送給重要的人，我們都希望這份來自山林的清香，
+            能帶來片刻安靜與更深層的生活感受。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="philosophy" class="soft-bg">
+    <div class="container">
+      <h2 class="section-title">創業理念</h2>
+      <p class="section-subtitle">
+        讓好茶回到生活，也讓生活更有溫度。
+      </p>
+
+      <div class="two-column">
+        <div class="text-block">
+          <h3>茶，不只是喝進口中的味道</h3>
+          <p>
+            在忙碌快速的生活裡，很多人已經習慣用最短的時間完成一切，
+            但山嵐茶舍始終相信，真正能留下記憶的體驗，往往來自那些願意慢下來的片刻。
+            一杯茶之所以動人，不只是因為香氣與味道，更是因為它能讓人重新找回節奏。
+          </p>
+          <p>
+            因此，我們想做的不只是販售茶葉，而是創造一種讓人願意停下腳步、
+            安靜地與自己相處的日常方式。從茶葉來源到品牌呈現，
+            我們都希望保留台灣茶原有的深度，同時用更簡潔、更容易理解的方式，
+            讓年輕世代與更多國際消費者也能自然接近茶文化。
+          </p>
+          <p>
+            我們的核心理念很簡單：讓每一杯茶都不只是商品，而是一段生活中值得被好好對待的時間。
+          </p>
+        </div>
+        <img src="images/2.jpg" alt="泡茶意象">
+      </div>
+    </div>
+  </section>
+
+  <section id="founder">
+    <div class="container">
+      <h2 class="section-title">創業家故事</h2>
+      <p class="section-subtitle">
+        一個從茶香記憶出發的品牌，想把台灣茶帶到更遠的地方。
+      </p>
+
+      <div class="two-column">
+        <img src="images/3.png" alt="創業故事">
+        <div class="text-block">
+          <h3>從熟悉的山林氣味，走向品牌的起點</h3>
+          <p>
+            山嵐茶舍的創辦人從小成長在與茶產業距離不遠的環境裡，
+            對茶葉的香氣、製茶的溫度、山區清晨的霧氣，都有著很深的記憶。
+            長大之後，他曾在不同城市生活與工作，也接觸過各式各樣的品牌與消費市場，
+            但始終覺得，台灣茶這樣有深度、有文化、有風土特色的產品，
+            不應該只停留在傳統通路或熟客圈子裡。
+          </p>
+          <p>
+            在一次又一次與朋友分享茶的過程中，他發現很多人其實並不是不喜歡喝茶，
+            而是沒有機會接觸到真正品質穩定、風格清楚、又容易理解的茶品牌。
+            於是，他決定回到台灣，重新整理自己對茶的理解，
+            並與茶農、焙茶師、設計夥伴合作，創立山嵐茶舍。
+          </p>
+          <p>
+            這個品牌的誕生，來自對土地的感情，也來自一個很簡單的願望：
+            希望讓更多人因為一杯茶，而重新感受到生活其實可以更慢、更深、更有味道。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" class="soft-bg">
+    <div class="container">
+      <div class="slider-header">
+        <div class="slider-header-left">
+          <h2>茶品系列</h2>
+          <p>左右滑動瀏覽茶品，感受不同產地與製程所呈現的獨特風味層次。</p>
+        </div>
+        <div class="slider-buttons">
+          <button class="slider-btn" id="prevBtn" aria-label="上一個">&#10094;</button>
+          <button class="slider-btn" id="nextBtn" aria-label="下一個">&#10095;</button>
+        </div>
+      </div>
+
+      <div class="product-slider" id="productSlider">
+
+        <div class="product-card">
+          <img src="images/阿里山.png" alt="高山烏龍">
+          <div class="product-info">
+            <h3>高山烏龍</h3>
+            <div class="product-meta">產地｜阿里山</div>
+            <p>
+              高山烏龍擁有清雅細緻的花香與柔和茶湯，入口後能感受到山頭茶特有的清新氣息。
+              茶感甘潤、尾韻悠長，適合喜歡清香型茶款、重視層次感與回甘表現的品飲者。
+            </p>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="images/金萱茶.png" alt="金萱茶">
+          <div class="product-info">
+            <h3>金萱茶</h3>
+            <div class="product-meta">產地｜杉林溪</div>
+            <p>
+              海拔800~1000公尺<br>
+              輕烘培、輕發酵、淡花香、天然奶精味<br>
+              無添加人工香精，可泡3~4次<br>
+              500/包/半斤<br>
+              1000/斤
+            </p>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="images/紅阿里山.png" alt="金萱茶">
+          <div class="product-info">
+            <h3>金萱茶</h3>
+            <div class="product-meta">產地｜南投</div>
+            <p>
+              金萱茶帶有淡雅奶香與柔順口感，茶湯滑順輕盈，入口溫和不刺激。
+              很適合作為每日茶飲，也適合剛開始接觸台灣茶、偏好清新柔和口感的人。
+            </p>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="images/高山金萱茶.png" alt="高山金萱茶">
+          <div class="product-info">
+            <h3>高山金萱茶</h3>
+            <div class="product-meta">產地｜阿里山</div>
+            <p>
+              阿里山-梅山觀日樓，海拔1550公尺(比賽茶頭等獎茶園)<br>
+              中烘培、中高發酵、團揉5次、果香帶花香<br>
+              可泡4~5次、特別適合冷泡<br>
+              300/包/四兩<br>
+              1200/斤
+            </p>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="images/紅色.png" alt="日月潭紅茶">
+          <div class="product-info">
+            <h3>日月潭紅茶</h3>
+            <div class="product-meta">產地｜魚池</div>
+            <p>
+              日月潭紅茶茶湯飽滿醇厚，帶有溫潤甜感與穩定尾韻，口感扎實卻不厚重。
+              很適合搭配甜點、早餐或下午茶時光，是非常成熟且親切的紅茶選擇。
+            </p>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="images/紫色.png" alt="蜜香紅茶">
+          <div class="product-info">
+            <h3>蜜香紅茶</h3>
+            <div class="product-meta">產地｜花蓮</div>
+            <p>
+              蜜香紅茶入口柔滑，帶有自然甜香與淡淡果韻，整體風格溫柔且容易親近。
+              適合喜歡甜潤型茶款的人，也很適合推薦給平常較少喝茶的新客群。
+            </p>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="images/大高山茶.png" alt="杉林溪高山茶">
+          <div class="product-info">
+            <h3>杉林溪高山茶</h3>
+            <div class="product-meta">產地｜南投</div>
+            <p>
+              杉林溪高山茶香氣清揚，茶湯飽滿細膩，帶有高海拔茶區獨有的鮮活感。
+              入口後層次逐漸展開，後韻乾淨且停留時間長，適合細細品飲。
+            </p>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="images/福壽利茶利.png" alt="凍頂烏龍">
+          <div class="product-info">
+            <h3>凍頂烏龍</h3>
+            <div class="product-meta">產地｜鹿谷</div>
+            <p>
+              凍頂烏龍擁有溫潤焙香與厚實茶感，是經典台灣烏龍茶中極具代表性的風格。
+              茶湯成熟穩定，尾韻帶有舒服的焙火甜感，適合喜歡傳統茶味的人。
+            </p>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="images/高山茶.png" alt="四季春">
+          <div class="product-info">
+            <h3>四季春</h3>
+            <div class="product-meta">產地｜名間</div>
+            <p>
+              四季春以清新的花香與輕快口感深受喜愛，冰熱皆宜，香氣表現直接而舒服。
+              適合作為日常入門茶款，無論單喝或搭配餐食都很自然順口。
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="values">
+    <div class="container">
+      <h2 class="section-title">品牌精神</h2>
+      <p class="section-subtitle">
+        我們希望用更誠實、更細緻的方式，讓台灣茶走進更多人的生活之中。
+      </p>
+
+      <div class="brand-values">
+        <div class="value-card">
+          <h4>精選產地</h4>
+          <p>與阿里山、杉林溪、日月潭等優質茶區合作，保留真實風土特色。</p>
+        </div>
+        <div class="value-card">
+          <h4>品質優先</h4>
+          <p>從茶葉原料、焙製到包裝，每一個細節都維持穩定與一致性。</p>
+        </div>
+        <div class="value-card">
+          <h4>簡約美學</h4>
+          <p>以現代設計重新整理茶的形象，讓傳統文化更自然地被接近。</p>
+        </div>
+        <div class="value-card">
+          <h4>文化傳承</h4>
+          <p>不只販售茶葉，也希望傳遞台灣茶的故事、價值與生活方式。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="location" class="soft-bg">
+    <div class="container">
+      <h2 class="section-title">品牌據點</h2>
+      <p class="section-subtitle">
+        山嵐茶舍立足台灣，與多個茶葉產區維持長期合作關係。
+      </p>
+
+      <div class="location-box">
+        <p>
+          山嵐茶舍品牌據點位於台灣，鄰近多個知名茶葉產區，方便直接與茶農及製茶夥伴保持密切合作，
+          也能更即時掌握每一批茶葉的品質表現與風味穩定性。
+        </p>
+        <p>
+          我們主要合作茶區包括阿里山高山茶區、南投杉林溪茶區、梨山高冷茶區與日月潭紅茶產區。
+          不同產地的氣候、海拔與製茶方式，都讓每一款茶呈現出截然不同的個性。
+        </p>
+        <p>
+          這樣的在地連結，讓山嵐茶舍不只是販售茶葉，而是真正參與一片茶葉從土地到茶杯的完整旅程。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-wrap">
+        <h2 class="section-title">聯絡我們</h2>
+        <p class="section-subtitle">
+          若你需要茶品批發、品牌合作、禮盒客製或網站商品展示規劃，歡迎與我們聯繫。
+        </p>
+        <a href="mailto:tea@example.com" class="btn btn-primary">立即洽詢</a>
+        <div class="contact-info">
+          <span>Email：tea@example.com</span>
+          <span>LINE：@mountaintea</span>
+          <span>Tel：02-1234-5678</span>
+          <span>Address：台灣台中市西區茶香路 88 號</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2026 山嵐茶舍 Mountain Tea Studio. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    const slider = document.getElementById("productSlider");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    function getScrollAmount() {
+      const card = slider.querySelector(".product-card");
+      const gap = 24;
+      return card ? card.offsetWidth + gap : 340;
+    }
+
+    prevBtn.addEventListener("click", () => {
+      slider.scrollBy({
+        left: -getScrollAmount() * 2,
+        behavior: "smooth"
+      });
+    });
+
+    nextBtn.addEventListener("click", () => {
+      slider.scrollBy({
+        left: getScrollAmount() * 2,
+        behavior: "smooth"
+      });
+    });
+  </script>
+
+</body>
+</html>
