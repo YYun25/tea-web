@@ -382,14 +382,45 @@
       font-size: 14px;
     }
 
+    /* 聯絡我們：左右雙欄佈局 */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* 左右各佔一半 */
+      gap: 60px; /* 左右間距 */
+      align-items: center;
+    }
+
+    .contact-text {
+      text-align: left;
+    }
+
+    /* 覆寫全域置中，改為左對齊 */
+    .contact-text .section-title {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .contact-text .section-subtitle {
+      text-align: left;
+      margin-left: 0;
+      margin-bottom: 30px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column; /* 改為垂直排列 */
+      gap: 15px;
+      margin-bottom: 35px;
+      color: #eadfff;
+      font-size: 16px;
+    }
+
     .map-container {
-      max-width: 900px;
-      margin: 40px auto 0;
+      width: 100%;
+      height: 480px; /* 地圖高度 */
       border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.2);
-      /* 讓高度在手機版和電腦版有不同的適應 */
-      height: 400px; 
+      box-shadow: 0 14px 34px rgba(0,0,0,0.2);
     }
 
     .map-container iframe {
@@ -398,10 +429,28 @@
       border: 0;
     }
 
-    @media (max-width: 600px) {
+    /* 響應式：手機版改回單欄置中 */
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .contact-text {
+        text-align: center;
+      }
+
+      .contact-text .section-title,
+      .contact-text .section-subtitle {
+        text-align: center;
+      }
+
+      .contact-info {
+        align-items: center;
+      }
+
       .map-container {
-        height: 300px;
-        border-radius: 16px;
+        height: 350px;
       }
     }
 
@@ -779,18 +828,24 @@
 
   <section id="contact" class="contact">
     <div class="container">
-      <div class="contact-wrap">
-        <h2 class="section-title">聯絡我們</h2>
-        <p class="section-subtitle">
-          若你需要茶品批發、品牌合作、禮盒客製或網站商品展示規劃，歡迎與我們聯繫。
-        </p>
-        <a href="mailto:tea@example.com" class="btn btn-primary">立即洽詢</a>
-        <div class="contact-info">
-          <span>Email：tea@example.com</span>
-          <span>LINE：@mountaintea</span>
-          <span>Tel：02-1234-5678</span>
-          <span>Address：新北市土城區千歲路18巷7號</span>
+      <div class="contact-grid">
+        
+        <div class="contact-text">
+          <h2 class="section-title">聯絡我們</h2>
+          <p class="section-subtitle">
+            若你需要茶品批發、品牌合作、禮盒客製或網站商品展示規劃，歡迎與我們聯繫。
+          </p>
+          
+          <div class="contact-info">
+            <span><strong>Email：</strong>tea@example.com</span>
+            <span><strong>LINE：</strong>@mountaintea</span>
+            <span><strong>Tel：</strong>02-1234-5678</span>
+            <span><strong>Address：</strong>新北市土城區千歲路18巷7號</span>
+          </div>
+          
+          <a href="mailto:tea@example.com" class="btn btn-primary">立即洽詢</a>
         </div>
+
         <div class="map-container">
           <iframe 
             src="https://maps.google.com/maps?q=新北市土城區千歲路18巷7號&t=&z=16&ie=UTF8&iwloc=&output=embed" 
@@ -799,6 +854,7 @@
             referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>
+
       </div>
     </div>
   </section>
