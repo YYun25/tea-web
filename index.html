@@ -318,7 +318,18 @@
       font-size: 14px;
       color: #6d6478;
       margin-bottom: 14px;
-      min-height: 140px;
+     /* min-height: 140px;*/
+    }
+
+    .product-info ul {
+      padding-left: 20px; /* 增加左側內距，把圓點往右推來對齊文字 */
+      margin-bottom: 14px; /* 與下方的文字保持適當間距 */
+      color: #6d6478; /* 保持字體顏色與內文一致 */
+      font-size: 14px; /* 保持字體大小與內文一致 */
+    }
+
+    .product-info li {
+      margin-bottom: 4px; /* 讓每個特色項目之間有一點微小的呼吸空間 */
     }
 
     .price {
@@ -490,9 +501,9 @@
         max-width: 260px;
       }
 
-      .product-info p {
+      /*.product-info p {
         min-height: 180px;
-      }
+      }*/
     }
 
     @media (max-width: 600px) {
@@ -522,9 +533,9 @@
         height: 180px;
       }
 
-      .product-info p {
+      /*.product-info p {
         min-height: 220px;
-      }
+      }*/
     }
   </style>
 </head>
@@ -677,9 +688,17 @@
           <div class="product-info">
             <h3>碧玉烏龍</h3>
            <!-- <div class="product-meta">產地｜???</div> -->
-            <p>
-              清香、花香、無烘焙
-            </p>
+            <p><strong>清香花韻，甘醇回甘</strong></p>
+            <p>嚴選高山茶菁製成，茶湯清澈透亮，入口帶有淡雅花香與自然甜韻。採輕發酵工藝保留茶葉原始風味，口感柔順不苦澀，適合日常品飲。</p>
+            <p><strong>風味特色</strong></p>
+            <ul>
+              <li>清香花香</li>
+              <li>茶韻甘甜</li>
+              <li>無焙火製程</li>
+              <li>口感清爽順口</li>
+            </ul>
+            <p><strong>適合對象</strong></p>
+            <p>喜愛清香型烏龍茶、追求自然茶韻的品茗者。</p>
           </div>
         </div>
 
@@ -687,9 +706,17 @@
           <img src="images/阿里山金萱.png" alt="阿里山金萱">
           <div class="product-info">
             <h3>阿里山金萱</h3>
-            <p>
-              天然奶香味
-            </p>
+            <p><strong>天然奶香，溫潤順口</strong></p>
+            <p>來自阿里山高海拔茶區，金萱茶種特有的天然奶香與花香交織，茶湯滑順甘甜，入口圓潤細膩，展現高山茶獨特魅力。</p>
+            <p><strong>風味特色</strong></p>
+            <ul>
+              <li>天然奶香</li>
+              <li>淡雅花香</li>
+              <li>茶質甘醇</li>
+              <li>餘韻悠長</li>
+            </ul>
+            <p><strong>適合對象</strong></p>
+            <p>喜歡溫和茶感與奶香風味的茶友。</p>
           </div>
         </div>
 
@@ -697,19 +724,17 @@
           <img src="images/達邦烏龍.png" alt="達邦烏龍">
           <div class="product-info">
             <h3>達邦烏龍</h3>
-            <p>
-              花香、奶油香
-            </p>
-          </div>
-        </div>
-
-        <div class="product-card">
-          <img src="images/觀日金萱.png" alt="觀日金萱">
-          <div class="product-info">
-            <h3>觀日金萱</h3>
-            <p>
-             海拔1550公尺、果香帶淡花香
-            </p>
+            <p><strong>濃郁花香，醇厚茶韻</strong></p>
+            <p>選自阿里山達邦地區優質茶園，擁有豐富花香與細緻奶油香氣。茶湯飽滿厚實，層次豐富，展現山區茶葉獨有的高雅氣息。</p>
+            <p><strong>風味特色</strong></p>
+            <ul>
+              <li>花香濃郁</li>
+              <li>奶油香氣</li>
+              <li>茶湯厚實</li>
+              <li>層次豐富</li>
+            </ul>
+            <p><strong>適合對象</strong></p>
+            <p>偏好香氣明顯、茶感厚實的品茗愛好者。</p>
           </div>
         </div>
 
@@ -717,9 +742,17 @@
           <img src="images/機採四季春.png" alt="機採四季春">
           <div class="product-info">
             <h3>機採四季春</h3>
-            <p>
-              淡香
-            </p>
+            <p><strong>清新淡雅，四季皆宜的甘甜茶韻</strong></p>
+            <p>選用優質四季春茶菁，以機械化採收技術確保品質穩定。茶湯清澈明亮，帶有自然花香與清甜滋味，入口柔順甘潤，尾韻清爽不澀，是最受歡迎的日常茶款之一。</p>
+            <p><strong>風味特色</strong></p>
+            <ul>
+              <li>淡雅花香</li>
+              <li>茶感清爽</li>
+              <li>甘甜順口</li>
+              <li>適合冷泡與熱泡</li>
+            </ul>
+            <p><strong>適合對象</strong></p>
+            <p>喜歡清爽茶感與日常飲用的消費者。</p>
           </div>
         </div>
 
@@ -727,10 +760,17 @@
           <img src="images/福壽利茶利.png" alt="福壽利茶利">
           <div class="product-info">
             <h3>天池</h3>
-            <p>
-              海拔2500~2700、口感清甜
-
-            </p>
+            <p><strong>雲霧高山孕育的極致甘甜</strong></p>
+            <p>茶園位於海拔2500至2700公尺高山地區，終年雲霧繚繞，造就茶葉細嫩厚實。茶湯入口鮮甜柔潤，帶有高山茶獨特冷礦氣息與花果香韻，層次細膩且餘韻悠長。</p>
+            <p><strong>風味特色</strong></p>
+            <ul>
+              <li>海拔2500～2700公尺</li>
+              <li>口感鮮甜細緻</li>
+              <li>高山冷礦韻</li>
+              <li>回甘持久</li>
+            </ul>
+            <p><strong>適合對象</strong></p>
+            <p>追求頂級高山茶風味與收藏價值的茶友。</p>
           </div>
         </div>
 
@@ -738,9 +778,17 @@
           <img src="images/武陵農場.png" alt="武陵農場">
           <div class="product-info">
             <h3>武陵農場</h3>
-            <p>
-              海拔1800~2000公尺、清甜回甘、蘭花香
-            </p>
+            <p><strong>高冷茶區的蘭香經典</strong></p>
+            <p>來自台灣著名高冷茶區武陵農場，日夜溫差大，使茶葉累積豐富芳香物質。茶湯甘甜圓潤，散發優雅蘭花香與高山韻味，入口滑順且層次豐富。</p>
+            <p><strong>風味特色</strong></p>
+            <ul>
+              <li>海拔1800～2000公尺</li>
+              <li>清甜回甘</li>
+              <li>優雅蘭花香</li>
+              <li>茶韻細膩飽滿</li>
+            </ul>
+            <p><strong>適合對象</strong></p>
+            <p>喜愛高山茶及蘭花香型茶款的品茗人士。</p>
           </div>
         </div>
 
@@ -748,9 +796,18 @@
           <img src="images/大庾嶺105 K.png" alt="大庾嶺105 K">
           <div class="product-info">
             <h3>大庾嶺105 K</h3>
-            <p>
-              頂級特等秘密茶園、入口極甜、立刻回甘、淡龍眼花香
-            </p>
+            <p><strong>台灣高山茶王者之作</strong></p>
+            <p>產自台灣最具代表性的高山茶區大禹嶺，茶園位於高海拔山區，生長環境嚴苛，產量珍稀。茶湯入口鮮甜細滑，帶有淡雅花香與獨特高山韻，香氣高揚且餘韻悠長，展現頂級茶品風範。
+</p>
+            <p><strong>風味特色</strong></p>
+            <ul>
+              <li>頂級特等茶園</li>
+              <li>入口鮮甜滑順</li>
+              <li>淡雅花香</li>
+              <li>高山韻濃厚</li>
+            </ul>
+            <p><strong>適合對象</strong></p>
+            <p>講究品質、收藏級與送禮需求的高端茶葉愛好者。</p>
           </div>
         </div>
 
@@ -815,16 +872,6 @@
         </div>
 
         <div class="product-card">
-          <img src="images/匠心茶禮組.png" alt="匠心茶禮組">
-          <div class="product-info">
-            <h3>匠心茶禮組</h3>
-            <p>
-              融合傳統茶文化與現代美學設計，多款茶罐搭配精緻外盒，兼具收藏與實用價值，讓品茶成為生活中的儀式感。
-            </p>
-          </div>
-        </div>
-
-        <div class="product-card">
           <img src="images/雅韻經典茶罐系列.png" alt="雅韻經典茶罐系列">
           <div class="product-info">
             <h3>雅韻經典茶罐系列</h3>
@@ -835,12 +882,11 @@
         </div>
 
         <div class="product-card">
-          <img src="images/臻選風味茶禮盒.png" alt="臻選風味茶禮盒">
+          <img src="images/客自化.png" alt="客自化">
           <div class="product-info">
-            <h3>臻選風味茶禮盒</h3>
+            <h3>客自化商品</h3>
             <p>
-              嚴選優質茶葉搭配特色包裝設計，兼具文化質感與送禮美學，為每一份禮品增添溫度與心意。
-
+              無
             </p>
           </div>
         </div>
