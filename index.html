@@ -14,6 +14,79 @@
     html {
       scroll-behavior: smooth;
     }
+   
+
+    /* 漢堡按鈕預設隱藏 */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    .menu-toggle span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: #5d3f86;
+      border-radius: 2px;
+    }
+
+    /* 手機版響應式調整 */
+    @media (max-width: 900px) {
+    /* 1. 強制讓 navbar 高度固定，並設定內容對齊 */
+    .navbar {
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      padding: 10px 5% !important; /* 設定左右間距，確保不會頂到邊緣 */
+      gap: 0 !important;
+    }
+
+    /* 2. 確保 Logo 字體不會過大導致擠壓 */
+    .logo {
+      font-size: 24px !important;
+    }
+
+    /* 3. 確保漢堡按鈕顯示並強制置右 */
+    .menu-toggle {
+      display: flex !important;
+      order: 2; /* 確保按鈕在 Logo 後面 */
+    }
+
+    /* 4. 修改選單定位，直接從 Header 下方開始 */
+    .nav-links {
+     position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: #ffffff;
+      
+      /* 關鍵修改：強制內部文字與項目水平置中 */
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* 讓內容水平置中 */
+      justify-content: center;
+      
+      padding: 20px 0;
+      transform: translateY(-120%);
+      transition: transform 0.3s ease;
+      z-index: 999;
+    }
+
+    .nav-links.active {
+      transform: translateY(0); /* 點擊後彈出 */
+    }
+  }
+
+
+
+
 
     body {
       font-family: "Noto Serif TC", "Microsoft JhengHei", serif;
@@ -541,9 +614,15 @@
 </head>
 <body>
 
-  <header>
+ <header>
     <div class="container navbar">
       <div class="logo">陳龍茗茶</div>
+      
+      <!-- 漢堡選單按鈕：將自動位於右側 -->
+      <button class="menu-toggle" aria-label="選單">
+        <span></span><span></span><span></span>
+      </button>
+
       <nav class="nav-links">
         <a href="#about">品牌介紹</a>
         <a href="#philosophy">創業理念</a>
@@ -636,7 +715,7 @@
 
   <section id="founder">
     <div class="container">
-      <h2 class="section-title">創業家故事</h2>
+      <h2 class="section-title">創業故事</h2>
       <p class="section-subtitle">
         一個從茶香記憶出發的品牌，想把台灣茶帶到更遠的地方。
       </p>
@@ -1001,6 +1080,21 @@
   </footer>
 
   <script>
+    // 選單開關邏輯
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    // 點擊連結後自動收合
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+      });
+    });
+
     const slider = document.getElementById("productSlider");
     const prevBtn = document.getElementById("prevBtn");
     const nextBtn = document.getElementById("nextBtn");
